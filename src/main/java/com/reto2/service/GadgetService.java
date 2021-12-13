@@ -17,12 +17,12 @@ public class GadgetService {
         return clotheRepository.getAll();
     }
 
-    public Optional<Gadget> getClothe(Integer id) {
-        return clotheRepository.getClothe(id);
+    public Optional<Gadget> getClothe(Integer reference) {
+        return clotheRepository.getClothe(reference);
     }
 
     public Gadget create(Gadget gadget) {
-        if (gadget.getId() == null) {
+        if (gadget.getReference() == null) {
             return gadget;
         } else {
             return clotheRepository.create(gadget);
@@ -31,8 +31,8 @@ public class GadgetService {
 
     public Gadget update(Gadget gadget) {
 
-        if (gadget.getId() != null) {
-            Optional<Gadget> dbGadget = clotheRepository.getClothe(gadget.getId());
+        if (gadget.getReference() != null) {
+            Optional<Gadget> dbGadget = clotheRepository.getClothe(gadget.getReference());
             if (!dbGadget.isEmpty()) {
 
                 if (gadget.getBrand()!= null) {
