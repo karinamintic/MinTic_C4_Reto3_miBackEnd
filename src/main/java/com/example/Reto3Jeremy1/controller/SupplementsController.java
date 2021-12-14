@@ -33,12 +33,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class SupplementsController {
     @Autowired
     private SupplementsService supplementsService;
-       
+
     @GetMapping("/all")
     public List<Supplements> getAll() {
         return supplementsService.getAll();
     }
-    
+
     @GetMapping("/{reference}")
     public Optional<Supplements> getSupplement(@PathVariable("reference") String reference) {
         return supplementsService.getSupplement(reference);
@@ -49,7 +49,7 @@ public class SupplementsController {
     public Supplements save(@RequestBody Supplements supplements) {
         return supplementsService.save(supplements);
     }
-    
+
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Supplements update(@RequestBody Supplements supplements) {
@@ -61,5 +61,5 @@ public class SupplementsController {
     public boolean delete(@PathVariable("reference") String supplements) {
         return supplementsService.delete(supplements);
     }
-   
+
 }
