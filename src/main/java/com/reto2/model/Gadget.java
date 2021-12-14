@@ -6,19 +6,19 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "gadgets")
+@Document(collection = "products")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Gadget {
     @Id
-    private Integer reference;
+    private String reference;
     private String brand;
     private String category;
     private String name;
     private String description;
-    private double price;
     private boolean availability = true;
+    private double price;
     private int quantity;
     private String photography;
 }

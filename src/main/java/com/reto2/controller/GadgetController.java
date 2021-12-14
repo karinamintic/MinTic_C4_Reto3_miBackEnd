@@ -21,9 +21,9 @@ public class GadgetController {
         return gadgetService.getAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<Gadget> getClothe(@PathVariable("id") Integer id) {
-        return gadgetService.getClothe(id);
+    @GetMapping("/{reference}")
+    public Optional<Gadget> getClothe(@PathVariable("reference") String reference) {
+        return gadgetService.getClothe(reference);
     }
 
     @PostMapping("/new")
@@ -38,9 +38,9 @@ public class GadgetController {
         return gadgetService.update(gadget);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{reference}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") Integer id) {
-        return gadgetService.delete(id);
+    public boolean delete(@PathVariable("reference") String reference) {
+        return gadgetService.delete(reference);
     }
 }

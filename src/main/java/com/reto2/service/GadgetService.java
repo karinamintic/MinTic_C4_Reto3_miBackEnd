@@ -17,7 +17,7 @@ public class GadgetService {
         return clotheRepository.getAll();
     }
 
-    public Optional<Gadget> getClothe(Integer reference) {
+    public Optional<Gadget> getClothe(String reference) {
         return clotheRepository.getClothe(reference);
     }
 
@@ -74,7 +74,7 @@ public class GadgetService {
         }
     }
 
-    public boolean delete(Integer reference) {
+    public boolean delete(String reference) {
         Boolean aBoolean = getClothe(reference).map(gadget -> {
             clotheRepository.delete(gadget);
             return true;

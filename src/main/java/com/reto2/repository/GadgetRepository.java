@@ -17,7 +17,7 @@ public class GadgetRepository {
         return gadgetCrudRepository.findAll();
     }
 
-    public Optional<Gadget> getClothe(Integer id) {
+    public Optional<Gadget> getClothe(String id) {
         return gadgetCrudRepository.findById(id);
     }
 
